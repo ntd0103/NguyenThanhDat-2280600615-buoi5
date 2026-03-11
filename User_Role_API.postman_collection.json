@@ -1,0 +1,337 @@
+{
+	"info": {
+		"name": "User Role API",
+		"description": "API quản lý User và Role với MongoDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "1. Create Role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Admin\",\n    \"description\": \"Administrator role\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/roles",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "roles"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get All Roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/roles",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "roles"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Get Role by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/roles/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "roles", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65f1a2b3c4d5e6f7g8h9i0j1",
+									"description": "Thay bằng Role ID thực tế"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Update Role",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Updated admin role description\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/roles/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "roles", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65f1a2b3c4d5e6f7g8h9i0j1",
+									"description": "Thay bằng Role ID thực tế"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Delete Role (Soft)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/roles/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "roles", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65f1a2b3c4d5e6f7g8h9i0j1",
+									"description": "Thay bằng Role ID thực tế"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Get Users by Role ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/roles/:id/users",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "roles", ":id", "users"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65f1a2b3c4d5e6f7g8h9i0j1",
+									"description": "Thay bằng Role ID thực tế"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "1. Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"johndoe\",\n    \"password\": \"password123\",\n    \"email\": \"john@example.com\",\n    \"fullName\": \"John Doe\",\n    \"role\": \"65f1a2b3c4d5e6f7g8h9i0j1\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "users"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "users"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. Get User by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "users", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65f1a2b3c4d5e6f7g8h9i0j1",
+									"description": "Thay bằng User ID thực tế"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4. Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"John Doe Updated\",\n    \"loginCount\": 5\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "users", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65f1a2b3c4d5e6f7g8h9i0j1",
+									"description": "Thay bằng User ID thực tế"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5. Enable User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"john@example.com\",\n    \"username\": \"johndoe\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/enable",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "users", "enable"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "6. Disable User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"john@example.com\",\n    \"username\": \"johndoe\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users/disable",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "users", "disable"]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "7. Delete User (Soft)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/users/:id",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": ["api", "users", ":id"],
+							"variable": [
+								{
+									"key": "id",
+									"value": "65f1a2b3c4d5e6f7g8h9i0j1",
+									"description": "Thay bằng User ID thực tế"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health Check",
+			"item": [
+				{
+					"name": "Check API Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/",
+							"protocol": "http",
+							"host": ["localhost"],
+							"port": "3000",
+							"path": [""]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
